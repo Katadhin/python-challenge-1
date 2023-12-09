@@ -1,0 +1,16 @@
+# John's Food Truck
+
+#Initial code for storing customer's order (provided in instructions)
+[
+  {
+    "Item name": "string",
+    "Price": float,
+    "Quantity": int
+  },
+  {
+    "Item name": "string",
+    "Price": float,
+    "Quantity": int
+  },
+]
+
