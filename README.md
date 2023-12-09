@@ -4,7 +4,8 @@ UNC AI Bootcamp Week 2 Homework
 ## Challenge Instructions
 
 The starter code provided includes the code for printing the menu for the customer, which was part of one of your Day 3 activities. You will be adapting this menu to allow customers to place an order, which includes storing the customer's order and printing the receipt with the total price of all items ordered. The starter code includes comments, which you may use as a guide for the steps you need to add.
-Order System
+
+### Order System
 
 ### Create an empty list. This list will later store a customer's order in dictionary format, as follows:
 [
@@ -19,6 +20,7 @@ Order System
     "Quantity": int
   },
 ]
+
 After the sub-menu is printed, prompt the customer to enter their selection from the menu, saving it as a variable menu_selection.
 Use input validation to check if the customer input menu_selection is a number. If it isn't, print an error message. If it is a number, convert the input to an integer and use it to check if it is in the keys of menu_items.
 If the user input is not in the menu_items keys, print an error. Otherwise, perform the following actions:
