@@ -6,7 +6,7 @@ UNC AI Bootcamp Week 2 Homework
 The starter code provided includes the code for printing the menu for the customer, which was part of one of your Day 3 activities. You will be adapting this menu to allow customers to place an order, which includes storing the customer's order and printing the receipt with the total price of all items ordered. The starter code includes comments, which you may use as a guide for the steps you need to add.
 Order System
 
-Create an empty list. This list will later store a customer's order in dictionary format, as follows:
+### Create an empty list. This list will later store a customer's order in dictionary format, as follows:
 [
   {
     "Item name": "string",
@@ -32,7 +32,7 @@ n: Set the place_order variable to False, print "Thank you for your order", and 
 Default: Tell the customer to try again because they didn't type a valid input.
 Order Receipt
 
-Create a for loop to loop through the order list.
+### Create a for loop to loop through the order list.
 Inside the loop, save the value of each key as their own variable: item_name, price, and quantity.
 Calculate the number of empty spaces that should be added to the display so that the receipt uses the following format:
 Item name                 | Price  | Quantity
@@ -45,12 +45,12 @@ Print the line for the receipt using the format in Step 8.
 Upon exiting the for loop, use list comprehension and sum() to calculate the total price of the order and display it to the customer. Make sure you multiply the price by the quantity in your list comprehension.
 Hints and Considerations
 
-Consider what you've learned so far. You’ve learned how to store content in variables, lists, and dictionaries. You’ve learned how to iterate through data structures, and you’ve learned how to debug along the way. Using all that you've learned, try to break down your tasks into discrete mini-objectives.
+### Consider what you've learned so far. You’ve learned how to store content in variables, lists, and dictionaries. You’ve learned how to iterate through data structures, and you’ve learned how to debug along the way. Using all that you've learned, try to break down your tasks into discrete mini-objectives.
 If you're struggling with how to start, consider writing out the steps of the process using pseudocode.
 Always commit your work and back it up with pushes to GitHub or GitLab. You don't want to lose hours of your hard work! Also make sure that your repo has a detailed README.md file.
 Requirements
 
-Order System (54 points)
+### Order System (54 points)
 
 An order list is initialized. (2 points)
 User is prompted for their menu item selection and it's saved as a variable menu_selection. (4 points)
