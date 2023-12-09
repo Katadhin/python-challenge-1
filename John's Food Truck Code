@@ -1,6 +1,9 @@
 # John's Food Truck
 
 #Initial code for storing customer's order (provided in instructions)
+
+
+
 [
   {
     "Item name": "string",
@@ -13,4 +16,7 @@
     "Quantity": int
   },
 ]
+
+print ("welcome to John's Food Truck")
+
 
