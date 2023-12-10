@@ -73,3 +73,32 @@ Space strings are created using string multiplication. (4 points)
 The customer's order is printed with the item name, price, and quantity. (6 points)
 List comprehension is used to calculate the total price of the order. (10 points)
 The total price of the order is printed to the screen. (4 points)
+
+## Pseudocode
+
+* #Create Menu
+
+* #Welcome Customer
+
+* #Present Menu
+
+* #Customer Category Selection
+
+  * #Validate Category
+  * #Correction Loop
+  * #Thank Customer If No Order
+
+* #Loop Through Categories
+
+* #Bonus #Offer Discount for Large Order
+
+* #Consolidate Order
+
+* #Give Customer Order  #Bonus - Ask for Payment Type
+
+* #Bouns - Give customer esitmate wait time based on # of orders
+
+* Bonus - Ask customer if they would like a text alert - Opt in for marketing
+
+
+
