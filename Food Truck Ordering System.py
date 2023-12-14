@@ -1,5 +1,5 @@
 # Food Truck Ordering System
-UNC AI Bootcamp Week 2 Homework 
+# UNC AI Bootcamp Week 2 Homework 
 
 ## Challenge Instructions
 
