@@ -199,27 +199,46 @@ while place_order:
                 })
                            
     # 7. Return the order list
-  
+    def get_order_list(order_list):
 
-    # Call the function with the order_list
- # Your code (up to the point where get_order_list was called)
+        # Loop through the items in the customer's order
+        for item in order_list: # Loop through the items in the customer's order
+            # Store the dictionary items as variables
+            item_name = item["Item name"]
+            item_price = item["Price"]
+            item_quantity = item["Quantity"]
+            # Calculate the number of spaces for formatted printing
+            num_item_spaces = 24 - len(item_name) - 3
+            # Create space strings
+            item_spaces = " " * num_item_spaces
 
-# Instead of using get_order_list, directly use order_list
-print("Your order so far:")
-for item in order_list:
-    item_name, item_price, item_quantity = item["Item name"], item["Price"], item["Quantity"]
-    print(f"{item_name} | ${item_price} | {item_quantity}")
+        # Calculate the cost of the order using list comprehension
+        # Multiply the price by quantity for each item in the order list, then sum()
+        # and print the prices.
+        
+        return order_list
 
-print() # Print a blank line
+# Call the function with the order_list
 
-
-
-# Rest of your code...
-
+    
     # Calculate the cost of the order using list comprehension
     # Multiply the price by quantity for each item in the order list, then sum()
     # and print the prices.
-    
+    total = sum([item["Price"] * item["Quantity"] for item in order_list]) # Calculate the cost of the order using list comprehension
+    print(f"Sub-total: ${total:.2f}") # Print the total cost of the order
+    print() # Print a blank line
+
+    # Ask the customer if they would like to order anything else
+    keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ") # Ask the customer if they would like to order anything else
+    # Check the customer's input
+    match keep_ordering.lower():
+        case 'y':
+            continue
+        case 'n':
+            place_order = False
+        case _:
+            print("Please try again.")
+            continue
 
  # here is where we will ask the customer if they would like to order anything else
    
@@ -250,10 +269,6 @@ print() # Print a blank line
 total = sum([item["Price"] * item["Quantity"] for item in order_list]) # Calculate the cost of the order using list comprehension
 print(f"Total: ${total:.2f}") # Print the total cost of the order
 
-print() # Print a blank line
-
-# Thank the customer for their order and let them know when it will be ready
-print(f"Thank you for your order {customer_name}! It will be ready in 10 minutes.") # Thank the customer for their order and let them know when it will be ready
 
 # Ask the customer is they would like a text alert when their order is ready
 print() # Print a blank line
