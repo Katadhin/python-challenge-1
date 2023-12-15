@@ -1,3 +1,111 @@
-import menu
+# python-challenge-1
+# UNC AI Bootcamp Week 2 Homework Assignment
+
+# Food Truck Ordering System
+
+# Menu
+menu = {
+    "Snacks": {"Cookie": 0.99, "Banana": 0.69, "Apple": 0.49, "Granola bar": 1.99},
+    "Meals": {"Burrito": 4.49, "Teriyaki Chicken": 9.99, "Sushi": 7.49, "Pad Thai": 6.99},
+    "Drinks": {"Soda": 1.99, "Tea": 2.49, "Coffee": 2.99},
+    "Desserts": {"Chocolate cake": 3.49, "Ice cream": 2.99}
+}
+
+# Welcome Customer
+customer_name = input("Welcome to John's Food Truck! What's your name? ")
+print(f"Hi, {customer_name}! Here's our menu:")
+
+# Order List
+order_list = []
+
+# Present Menu
+def present_menu():
+    menu_title = "John's Food Truck Menu"
+    print("\n" + "=" * 40)
+    print(f"{menu_title.center(40)}")
+    print("=" * 40)
+
+    for category, items in menu.items():
+        print(f"\n-- {category} --".center(40))
+        for item, price in items.items():
+            print(f"{item.ljust(30, '.')} ${price:>.2f}")
+
+    print("=" * 40 + "\n")
+
+# Customer Category Selection
+def customer_selection():
+    present_menu()
+    category = input("Please choose a category (Snacks, Meals, Drinks, Desserts) or type 'exit' to finish: ").title()
+    if category in menu:
+        return category
+    elif category.lower() == 'exit':
+        return None
+    else:
+        print("Invalid category. Please try again.")
+        return customer_selection()
+
+# Order Items
+def order_items(category):
+    print(f"\n{category} options:")
+    for idx, (item, price) in enumerate(menu[category].items(), 1):
+        print(f"{idx}. {item}: ${price:.2f}")
+
+    while True:
+        try:
+            item_choice = int(input("Choose an item by number: "))
+            if 1 <= item_choice <= len(menu[category]):
+                item_name = list(menu[category].keys())[item_choice - 1]
+                item_price = menu[category][item_name]
+                quantity = input(f"How many {item_name}'s? (default 1): ")
+                quantity = int(quantity) if quantity.isdigit() else 1
+                order_list.append({"Item name": item_name, "Price": item_price, "Quantity": quantity})
+                break
+            else:
+                print("Invalid selection. Please try again.")
+        except ValueError:
+            print("Please enter a number.")
+
+# Match-case for customer's decision
+def customer_decision():
+    decision = input("Would you like to order something else? (Y/N): ").lower()
+    match decision:
+        case 'y':
+            return True
+        case 'n':
+            return False
+        case _:
+            print("Invalid input. Please type 'Y' for yes or 'N' for no.")
+            return customer_decision()
+
+# Order Receipt
+def print_receipt():
+    print("\nYour order receipt:")
+    print()
+    print("Items".ljust(24) + "| Price  | Quantity")
+    print("-" * 40)
+    total = 0
+    for item in order_list:
+        item_name, price, quantity = item["Item name"], item["Price"], item["Quantity"]
+        total += price * quantity
+        name_spaces = " " * (24 - len(item_name))
+        print(f"{item_name}{name_spaces}| ${price:.2f}  | {quantity}")
+
+    print(f"\nTotal: ${total:.2f}")
+
+print()
+
+# Main
+while True:
+    category = customer_selection()
+    if not category:
+        break
+    order_items(category)
+    if not customer_decision():
+        break
+
+print_receipt()
+print()
+print("Thank you for your order!")
 
 
+# Note ChatGPT Code refactoring for 
